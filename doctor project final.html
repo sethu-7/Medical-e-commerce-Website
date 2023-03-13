@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>OPIHERBS:</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" media="only screen" />
+    <link href="MobileStyleSheet.css" rel="stylesheet" type="text/css"
+    media="only screen and (max-device-width: 480px) , only screen and (-webkit-min-device-pixel-ratio: 2) , screen and (-webkit-device-pixel-ratio:1.5)" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+
+        :root{
+            --blue:#4b0082;
+            --box-shadow:.5rem .5rem 0 rgb(22,160,133,.2)
+            --text-shadow:.4rem .4rem 0 rgba(0,0,0,.2)
+            --border:.2rem solid #4b0082;
+            
+            
+        }
+
+        html{
+            overflow-x: hidden;
+            scroll-padding-top: 7rem;
+            scroll-behavior: smooth;
+        }
+
+        .ourdoc{
+            font-family: 'Yeseva One', cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            transition: all .2s ease-out;
+            text-decoration: none;
+        }
+        .ourdoc .ourboxcontainer{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(27rem,1fr));
+            gap: 2rem;
+        }
+        
+        .ourdoc .ourboxcontainer.ourbox{
+            text-align: center;
+            background-color: #FCF8E8;
+            border-radius: 5rem;
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+        }
+        
+        .ourdoc .ourboxcontainer .ourbox img{
+            height: 20rem;
+            border: var(--border);
+            border-radius: .5rem;
+            margin-top: 1rem;
+        }
+        
+        .ourdoc .ourboxcontainer .ourbox h3{
+            color: var(--black);
+            font-size: 2.5rem;
+        }
+        .ourdoc .ourboxcontainer .ourbox span{
+            color: var(--blue);
+            font-size: 2.5rem;
+        }
+        
+        .ourdoc .ourboxcontainer .ourbox .share{
+            padding-top: 2rem;
+        
+        }
+        .ourdoc .ourboxcontainer .ourbox .share a{
+            height: 5rem;
+            width: 5rem;
+            line-height: 4.5rem;
+            font-size: 2rem;
+            color: var(--blue);
+            border-radius: .5rem;
+            border: var(--border);
+            margin: 3rem;
+        
+        }
+        .ourdoc .ourboxcontainer .ourbox .share a:hover{
+            background: var(--blue);
+            color: #FCF8E8;
+            box-shadow: var(--box-shadow);
+        
+        }
+        .navbar {
+            margin: 5px;
+            background-color: #4b0082;
+            position: relative;
+            /* border-radius: 40px; */
+
+        }
+
+        .navbar::before {
+            content: '';
+            background-color: blueviolet;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .navbar ul {
+            margin: 1px;
+            overflow: auto;
+        }
+
+        .navbar li {
+            float: left;
+            list-style: none;
+            margin: 20px 20px;
+        }
+
+        .navbar li a {
+            padding: 3px 3px;
+            color: white;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .navbar li a:hover {
+            background-color: blueviolet;
+
+        }
+
+        .footer li a:hover {
+            background-color: blueviolet;
+
+        }
+
+        #search {
+            /* margin-top: 50px; */
+            width: 100%;
+            position: absolute;
+            /* bottom: 416px;
+            left: 320px;
+            height: 36px; */
+            text-align: center;
+            width: 50%;
+            border-radius: 40px;
+            padding: 6px 20px 5px 30px;
+            overflow: auto;
+            display: flex;
+
+
+            /* width: 100%; */
+            /* justify-content: center; */
+            flex-wrap: wrap;
+            flex-grow: inherit;
+            /* display: flex; */
+
+
+
+        }
+
+        #logo {
+            /* padding: 10px; */
+            width: 135px;
+            float: right;
+
+
+        }
+
+
+        .navbar input {
+            border: 3px solid rgb(193, 75, 222);
+            border-radius: 15px;
+            width: 130px;
+            text-align: center;
+
+        }
+
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: auto;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+        }
+
+        .container::before {
+            content: '';
+            background-image: url("https://www.spaandclinic.com.au/wp-content/uploads/2020/05/iStock-12030820411.jpg");
+            position: absolute;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.5;
+
+        }
+
+        #heading {
+            font-size: 50px;
+            text-align: center;
+            margin-top: -200px;
+            font-family: 'Yeseva One', cursive;
+        }
+
+        /* .btn btn-info {
+            float: right;
+            display: table-cell;
+            text-align: right;
+            padding: 10px 10px;
+            width: 20px;
+            width: 100%;
+            position: absolute;
+            bottom: 416px;
+            left: 320px;
+            height: 36px;
+            text-align: center;
+            width: 50%;
+            border-radius: 40px;
+            padding: 6px 20px 5px 30px;
+            overflow: auto;
+        } */
+
+        .navbar ul li a {
+
+            display: block;
+            /* padding: 3px 22px; */
+            border-radius: 20px;
+
+        }
+
+        .footer li a {
+
+            /* display: block; */
+            /* padding: 3px 22px; */
+            border-radius: 20px;
+
+        }
+
+        .footer {
+            background-color: indigo;
+            color: aliceblue;
+            /* display: flex; */
+            align-items: center;
+
+
+            color: #FCF8E8;
+            display: flex;
+
+            /* height: 300px; */
+            /* justify-content: center; */
+            /* position: fixed; */
+            width: 100%;
+            /* justify-content: ; */
+            flex-wrap: wrap;
+            flex-grow: inherit;
+
+        }
+
+        .footer li a {
+            color: white;
+        }
+
+        .footer div {
+            margin: 10px;
+            padding: 20px;
+            /* font-size: 30px; */
+        }
+
+        .consult {
+            margin: 40px;
+
+        }
+
+        .doc {
+            background-color: #ffedf0;
+
+        }
+
+        .doctor {
+            margin: 40px;
+
+
+        }
+
+        #flex {
+            display: flex;
+            justify-content: space-around;
+            /* word-wrap: inherit; */
+            margin: 34px;
+            /* flex-direction: column; */
+        }
+
+        #flex .box {
+            /* border: 2px solid indigo; */
+            text-align: center;
+            display: block;
+            /* height: 100px; */
+            /* display: flex;
+            align-items: center; */
+            height: 300px;
+            margin: auto;
+            padding: 20px
+        }
+
+        #flex .boxside {
+            background-image: url("https://img.freepik.com/premium-vector/abstract-thin-lines-wavy-illustration-free-shape-temlate-curve-style-artwork-seamless-background_121035-618.jpg");
+            text-align: center;
+            display: block;
+
+            font-size: large;
+            height: 100px;
+            margin: auto;
+            padding: 20px
+        }
+
+        #flex .box img {
+            height: 350px;
+            margin: -40px;
+            padding: auto;
+
+
+            display: block;
+
+
+        }
+
+        #flexdoc {
+            display: flex;
+            justify-content: space-around;
+            /* word-wrap: inherit; */
+            margin: 34px;
+            /* flex-direction: column; */
+        }
+
+        #flexdoc .boxdoc {
+            /* border: 2px solid indigo; */
+            text-align: center;
+            display: block;
+            /* height: 100px; */
+            /* display: flex;
+            align-items: center; */
+            height: 300px;
+            margin: auto;
+            padding: 20px
+        }
+
+        #flexdoc .boxsidedoc {
+            /* background-image: url("https://img.freepik.com/premium-vector/abstract-thin-lines-wavy-illustration-free-shape-temlate-curve-style-artwork-seamless-background_121035-618.jpg"); */
+            text-align: center;
+            display: block;
+
+            font-size: large;
+            height: 100px;
+            margin: auto;
+            padding: 20px
+        }
+
+        #flex .boxdoc img {
+            height: 350px;
+            margin: -40px;
+            padding: auto;
+
+
+            display: block;
+
+        }
+
+
+        .doctor h1 {
+            font-family: 'Secular One', sans-serif;
+            font-family: 'Yeseva One', cursive;
+
+        }
+
+        .doctor div {
+            font-family: 'Secular One', sans-serif;
+            font-family: 'Yeseva One', cursive;
+        }
+
+
+
+
+
+        .consult div {
+            font-family: 'Secular One', sans-serif;
+            font-family: 'Yeseva One', cursive;
+
+        }
+
+        .consult h2 {
+            text-align: right;
+            font-family: 'Secular One', sans-serif;
+            font-family: 'Yeseva One', cursive;
+        }
+
+        .consult p {
+            text-align: right;
+            font-weight: 500;
+            font-size: medium;
+        }
+
+
+
+
+        :root {
+            --clr-neon: rgba(235, 97, 143, 1);
+            --clr-bg: rgba(1, 1, 1, 1);
+            --clr-white: rgba(255, 255, 255, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* body {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background: var(--clr-bg);
+	font-family: system-ui;
+	color: var(--clr-neon);
+} */
+
+        .button {
+            font-size: 2em;
+
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--clr-neon);
+            border: var(--clr-neon) 4px solid;
+            padding: 0.25em 1em;
+            border-radius: 0.25em;
+
+            text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.55), 0 0 0.5em currentColor;
+
+            box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+
+            position: relative;
+        }
+
+        .button::before {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            background: var(--clr-neon);
+            top: 120%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            transform: perspective(1.2em) rotateX(40deg) scale(1.5, 0.5);
+            filter: blur(1.15em);
+            opacity: 0.7;
+
+            transition: transform 0.5s linear;
+        }
+
+        .button::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 0 4em 0.6em var(--clr-neon), 0 0 1em 0.2em var(--clr-white);
+            opacity: 0;
+            background: var(--clr-neon);
+            z-index: -1;
+            transition: opacity 0.5s linear;
+        }
+
+        .button:hover,
+        .button:focus {
+            color: var(--clr-bg);
+            text-shadow: none;
+        }
+
+        .button:hover::before,
+        .button:focus::before {
+            opacity: 1;
+            transform: perspective(1em) rotateX(40deg) scale(1.5, 0.6);
+            transition: transform 0.5s linear;
+        }
+
+        .button:hover::after,
+        .button:focus::after {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+
+            <ul>
+                <li><img src="C:\Users\sethu\OneDrive\Documents\FFSD\ffsdprojectopiherb.jpg" alt="opiherb" id="logo">
+                </li>
+                <li><a href="">Home</a></li>
+                <li><a href="">Doctors</a></li>
+                <li><a href="">Medicines</a></li>
+                <li><a href="">Emergency</a></li>
+                <li><a href="">First Aid</a></li>
+                <li><a href="">Premium</a></li>
+                <li><a href="">Offers</a></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li><button type="button" class="btn btn-info" id="logo">Sign in</button></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container">
+            <h1 id="heading">FIND YOUR NEAREST DOCTOR NOW</h1><br>
+            <input type="search" id="search" placeholder="search doctors,clinics hospitals etc..">
+
+        </div>
+
+        <div class="consult">
+            <h2>Consult with the Best Doctors Around the world</h2>
+            <p>Starting at ₹199</p>
+            <div id="flex">
+                <div class="box">
+                    <img src="https://img.freepik.com/premium-vector/vector-illustration-cardiologist-white-coat-with-heart-his-hands-profession_87693-1659.jpg"
+                        alt="doctor">
+                </div>
+
+                <div class="box">
+
+
+                    <div class="boxside">Talk within 30 min</div>
+                    <div class="boxside">First consultation entirely free!</div>
+                    <div class="boxside">Get a valid prescription</div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+    <section class="ourdoc" id="ourdoc">
+        <h1 class="docheading">our <span>doctors</span></h1>
+        <div class="ourboxcontainer">
+            <div class="ourbox">
+                <img src="" alt="doc">
+                <h3>john</h3>
+                <span>expert doc</span>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        <div class="ourboxcontainer">
+            <div class="ourbox">
+                <img src="" alt="doc">
+                <h3>john</h3>
+                <span>expert doc</span>
+                <div class="share">
+                    <a href="#" class="fab fa-facebook-f"></a>
+                    <a href="#" class="fab fa-twitter"></a>
+                    <a href="#" class="fab fa-instagram"></a>
+                    <a href="#" class="fab fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doc">
+        <div class="doctor">
+
+
+            <div id="flexdoc">
+
+
+                <div class="boxdoc">
+
+                    <h1>ARE YOU A DOCTOR?</h1>
+                    <div class="boxsidedoc">Join Us Today and connect with patients around the world
+
+                    </div>
+
+                    <body>
+                        <a href="#" class="button">Join Us</a>
+                    </body>
+
+
+                </div>
+                <div class="box">
+                    <img src="C:\Users\sethu\OneDrive\Documents\FFSD\doc heart.png" alt="doctor">
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+
+            <div>
+                <h4>Know us</h4>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Business</a></li>
+                <li><a href="">Partnership</a></li>
+
+            </div>
+            <div>
+                <h4>Our Policies</h4>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Grievance Redressal</a></li>
+                <li><a href="">Fake jobs and Frauds</a></li>
+            </div>
+            <div>
+                <h4>Our Services</h4>
+                <li><a href="">Order Medicines</a></li>
+                <li><a href="">Consult a Doctor</a></li>
+                <li><a href="">Articles</a></li>
+            </div>
+            <div>
+                <h4>Connect with Us</h4>
+                <li>
+
+                    <a href="#" class="fab fa-facebook-f"> facebook</a>
+                </li>
+                <li>
+
+                    <a href="#" class="fab fa-twitter"> twitter</a>
+                </li>
+                 <li>
+
+                     <a href="#" class="fab fa-instagram" > instagram</a>
+                 </li>
+
+
+            </div>
+
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
